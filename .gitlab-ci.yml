@@ -21,7 +21,7 @@ build:
 linting:
   stage: linting
   script:
-    - npm run lint
+    - npx nps nx workspace-lint && ng lint
   dependencies:
     - build
   except:
@@ -51,6 +51,8 @@ test:unit:
 #       - cypress/screenshots
 #       - cypress/videos
 #     expire_in: 1 day
+#   only:
+#   - merge_requests
 
 deploy_prod:
   stage: deploy
